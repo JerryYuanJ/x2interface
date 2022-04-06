@@ -44,7 +44,7 @@
         <button @click="copyCode(displayedInterfaceContent)">Copy Code</button>
         <div class="gap"></div>
         <a href="https://github.com/JerryYuanJ/x2Interface">
-          <img src="./github.svg" width="32" height="32" />
+          <img src="./github.svg" width="28" height="28" />
         </a>
       </div>
       <textarea class="preview-content" v-model="displayedInterfaceContent"></textarea>
@@ -214,5 +214,9 @@ textarea {
   outline: none;
   resize: none;
   padding: 24px;
+}
+
+a {
+  display: flex;
 }
 </style>
