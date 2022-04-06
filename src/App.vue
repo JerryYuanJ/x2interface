@@ -43,7 +43,7 @@
         <div class="gap"></div>
         <button @click="copyCode(displayedInterfaceContent)">Copy Code</button>
         <div class="gap"></div>
-        <a href="https://github.com/JerryYuanJ/x2Interface">
+        <a target="_blank" href="https://github.com/JerryYuanJ/x2Interface">
           <img src="./github.svg" width="28" height="28" />
         </a>
       </div>
