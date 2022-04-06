@@ -9,3 +9,6 @@ This is a small tool for developers which can generate typescript interfaces def
 - Handle nested objects
 - Formatted input and output
 
+## Screenshot
+
+![X2Interface Screenshot](./x2interface_demo.png)
