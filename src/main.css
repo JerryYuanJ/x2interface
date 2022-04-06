@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: -apple-system, Mulish, Avenir, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  padding: 12px 16px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  outline: none;
+  border: none;
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+
+input {
+  height: 24px;
+  line-height: 24px;
+  outline: none;
+  border: none;
+  border: 1px solid #ddd;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  height: 18px;
+}
+
+select {
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+label {
+  font-size: 14px;
+}
