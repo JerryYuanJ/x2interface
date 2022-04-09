@@ -18,7 +18,12 @@
         </div>
         <button class="transform-btn" @click="getTransformedCode">Transform</button>
       </div>
-      <textarea class="editor" v-model="jsonContent"></textarea>
+      <textarea
+        ref="inputRef"
+        class="editor"
+        placeholder="Input or paste your JSON or JS object here to parse"
+        v-model="jsonContent"
+      ></textarea>
     </div>
     <div class="preview-container">
       <div class="config-bar">
@@ -53,7 +58,7 @@
 </template>
 
 <script>
-import { computed, defineComponent, ref, watch } from "vue";
+import { computed, defineComponent, onMounted, ref, watch } from "vue";
 import { transform, copyTextToClipboard } from "./util";
 
 const inputTypes = {
@@ -65,13 +70,14 @@ const inputTypes = {
 export default defineComponent({
   name: "App",
   setup() {
-    const jsonContent = ref(`{}`);
+    const jsonContent = ref(``);
     const interfaceContent = ref("");
     const displayedInterfaceContent = ref("");
     const rootInterfaceName = ref("Test");
     const exportRoot = ref(true);
     const indentNumber = ref(2);
     const userInputType = ref(inputTypes.JSON);
+    const inputRef = ref(null);
 
     const config = computed(() => {
       return {
@@ -116,6 +122,12 @@ export default defineComponent({
 
     watch(() => jsonContent.value, handleContentOrConfigChange);
 
+    onMounted(() => {
+      setTimeout(() => {
+        inputRef.value?.focus();
+      }, 100);
+    });
+
     function format() {
       if (userInputType.value === inputTypes.JS) {
         const jsObject = eval(`(${jsonContent.value})`);
@@ -128,6 +140,7 @@ export default defineComponent({
     }
 
     return {
+      inputRef,
       jsonContent,
       displayedInterfaceContent,
       format,
